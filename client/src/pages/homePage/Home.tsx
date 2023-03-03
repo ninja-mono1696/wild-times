@@ -1,24 +1,24 @@
 import React from "react";
 import { Box, Button, Flex } from "@chakra-ui/react";
-import bgVideo from "../../assets/bg_video.mp4";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-
+import HomeVid from "./Home.mp4";
 const Home = () => {
   return (
     <Box w="100%" h="100vh">
       <video
-        src={bgVideo}
-        muted
-        autoPlay
-        loop
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
-          zIndex: "1",
-          objectFit: "cover",
-        }}></video>
+          src={HomeVid}
+          muted
+          autoPlay
+          loop
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            objectFit: "cover",
+          }}
+        ></video>
 
       <Box w="100%" position="absolute" zIndex="100" top="0" textAlign="center">
         <Box w="95%" paddingLeft={5} paddingRight={5} margin="auto">
@@ -46,5 +46,4 @@ const Home = () => {
     </Box>
   );
 };
-
 export default Home;
