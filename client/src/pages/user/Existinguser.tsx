@@ -14,14 +14,20 @@ import {
   FormLabel,
   useToast,
   useDisclosure,
+  Box,
+  Image,
 } from "@chakra-ui/react";
+import Day2nightTheme from "../../assets/day2night.png";
+import winterTheme from "../../assets/winterTheme.png";
 
 const existingUser = () => {
   const toast = useToast();
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [select, setSelect] = useState(true);
+  const [theme, setTheme] = useState("day2night");
+  console.log(theme);
   const userFunc = () => {
     const payload = {
       name,
@@ -52,6 +58,7 @@ const existingUser = () => {
               isClosable: true,
             });
             sessionStorage.setItem("user", JSON.stringify(res.data));
+            sessionStorage.setItem("setTheme", theme);
             navigate("/game");
           }
           console.log(res);
@@ -81,6 +88,36 @@ const existingUser = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+              <FormLabel mt={5}>Select Theme</FormLabel>
+              <Box
+                display={"flex"}
+                justifyContent={"space-around"}
+                width={"100%"}
+                m={"auto"}
+              >
+                <Box
+                  cursor={"pointer"}
+                  width={"45%"}
+                  border={select ? "3px solid red" : "none"}
+                  onClick={() => {
+                    setSelect(true);
+                    setTheme("day2night");
+                  }}
+                >
+                  <Image src={Day2nightTheme}></Image>
+                </Box>
+                <Box
+                  cursor={"pointer"}
+                  width={"45%"}
+                  border={select ? "none" : "3px solid red"}
+                  onClick={() => {
+                    setSelect(false);
+                    setTheme("winter");
+                  }}
+                >
+                  <Image src={winterTheme}></Image>
+                </Box>
+              </Box>
             </FormControl>
           </ModalBody>
           <ModalFooter>
