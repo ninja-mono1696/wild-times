@@ -3,6 +3,8 @@ import { Box, Button, Flex } from "@chakra-ui/react";
 import bgVideo from "../../assets/bg_video.mp4";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import Newuser from "../user/Newuser";
+import Existinguser from "../user/Existinguser";
 
 const Home = () => {
   return (
@@ -34,8 +36,8 @@ const Home = () => {
                 alignItems="center"
                 justifyContent="center"
                 gap={5}>
-                <Button>New User</Button>
-                <Button>Existing User</Button>
+                <Button><Newuser/></Button>
+                <Button><Existinguser/></Button>
               </Flex>
             </Box>
           </Box>
