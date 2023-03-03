@@ -13,11 +13,10 @@ import {
   FormControl,
   FormLabel,
   useToast,
-  useDisclosure
-} from '@chakra-ui/react'
+  useDisclosure,
+} from "@chakra-ui/react";
 
 const newUser = () => {
-
   const toast = useToast();
   const [name, setName] = useState("");
   const navigate = useNavigate();
@@ -25,10 +24,10 @@ const newUser = () => {
 
   const userFunc = () => {
     const payload = {
-      name
+      name,
     };
     try {
-      fetch(`https://localhost:8080/`, {
+      fetch(`https://shy-blue-elk-hem.cyclic.app/users/register`, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {
@@ -37,30 +36,25 @@ const newUser = () => {
       })
         .then((res) => res.json())
         .then((res) => {
-          if (res.msg == "user not found") {
+          if (res.msg == "The Player already exists") {
             toast({
-              status: "error",
+              status: "warning",
               duration: 3000,
-              title: "User not found!",
+              title: "Player already exists!",
               isClosable: true,
+              position: "top",
             });
           }
-          if (res.msg == "invalid credentials") {
+          if (res.msg == "Player has been registered") {
             toast({
-              status: "error",
-              duration: 3000,
-              title: "Invalid Credentials",
-              isClosable: true,
-            });
-          }
-          if (res.msg == "new user in") {
-            toast({
+              title: "Player Logged In!",
               status: "success",
               duration: 3000,
-              title: "New user Successfully!",
               isClosable: true,
+              position: "top",
             });
-            navigate("/");
+            sessionStorage.setItem("user", JSON.stringify(res.data));
+            navigate("/game");
           }
           console.log(res);
         })
@@ -71,40 +65,43 @@ const newUser = () => {
     }
   };
 
-
-
   return (
     <>
       <Button onClick={onOpen}>New User</Button>
-      <Modal isOpen={isOpen} onClose={onClose} >
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
             <ModalCloseButton />
           </ModalHeader>
           <ModalBody>
-
             <FormControl>
               <FormLabel>Enter the user Name</FormLabel>
-              <Input placeholder="Enter user name" type="name" value={name} onChange={(e) => setName(e.target.value)} />
+              <Input
+                placeholder="Enter user name"
+                type="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </FormControl>
-
           </ModalBody>
           <ModalFooter>
-            <Button type="submit"
+            <Button
+              type="submit"
               bg={"blue.500"}
               color={"white"}
               _hover={{
                 bg: "blue.600",
               }}
               onClick={userFunc}
-            >Submit</Button>
+            >
+              Submit
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
-
-}
+  );
+};
 
 export default newUser;
