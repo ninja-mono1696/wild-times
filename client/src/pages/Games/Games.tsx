@@ -54,8 +54,9 @@ const Games = () => {
     //https://i.ibb.co/n3ybx81/Snowman-Face.png ---snowman face
     //https://i.ibb.co/ZxrcfmY/Snowman.png ---snowman
     //https://i.ibb.co/QCdKNyY/al.png----bird
+    //https://i.ibb.co/rmyqqgY/Snowman.png---new snowman
     const Bird = new Image()
-    Bird.src = "https://i.ibb.co/ZxrcfmY/Snowman.png"
+    Bird.src = "https://i.ibb.co/rmyqqgY/Snowman.png"
     Bird.alt = "bird"
     Bird.style.zIndex = "10"
 
@@ -97,8 +98,8 @@ const Games = () => {
             let trophy={
                     x:width-150,
                     y:height/2.5,
-                    w:150,
-                    h:150,    
+                    w:100,
+                    h:100,    
             }
             
             
@@ -143,7 +144,7 @@ const Games = () => {
                    
                     let obj:result={
                        score: enemy.length*0,
-                       result:"lose"
+                       result:"loss"
                     }
                    
                        //to clear the prev image
@@ -236,7 +237,6 @@ const Games = () => {
           >
             <Button bg={"black"} color="white" _hover={{}}>End Game</Button> 
            
-            <Button bg={"black"} color="white"></Button>
         </Box>
           <canvas ref={ref} id="canvas"  >
 
