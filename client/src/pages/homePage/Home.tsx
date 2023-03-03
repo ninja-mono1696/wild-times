@@ -2,7 +2,10 @@ import React from "react";
 import { Box, Button, Flex } from "@chakra-ui/react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import Newuser from "../user/Newuser";
+import Existinguser from "../user/Existinguser";
 import HomeVid from "./Home.mp4";
+
 const Home = () => {
   return (
     <Box w="100%" h="100vh">
@@ -33,10 +36,13 @@ const Home = () => {
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="center"
+
                 gap={5}
               >
-                <Button>New User</Button>
-                <Button>Existing User</Button>
+                gap={5}>
+                <Button><Newuser/></Button>
+                <Button><Existinguser/></Button>
+
               </Flex>
             </Box>
           </Box>
