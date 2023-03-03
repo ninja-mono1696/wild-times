@@ -1,53 +1,44 @@
 import React from "react";
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Box, Button, Flex, Image } from "@chakra-ui/react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Newuser from "../user/Newuser";
 import Existinguser from "../user/Existinguser";
-import HomeVid from "./Home.mp4";
 
 const Home = () => {
   return (
     <Box w="100%" h="100vh">
-      <video
-        src={HomeVid}
-        muted
-        autoPlay
-        loop
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-          objectFit: "cover",
-        }}
-      ></video>
+      <Image
+        src={
+          "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxM[…]nx8Z3JhZGllbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+        }
+        position="relative"
+        width="100%"
+        height="100%"
+        zIndex="-1"
+        objectFit="cover"
+        alt="img"
+      />
 
       <Box w="100%" position="absolute" zIndex="100" top="0" textAlign="center">
         <Box w="95%" paddingLeft={5} paddingRight={5} margin="auto">
-          <Navbar />
+          {/* <Navbar /> */}
 
           <Box padding={10} minHeight={500} textAlign="center">
             <Box margin="auto" p={5}>
-              <h1>Bird Arcade Game</h1>
-              <p> Play and try to get the highest score.</p>
-
               <Flex
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="center"
-
                 gap={5}
               >
-                gap={5}>
-                <Button><Newuser/></Button>
-                <Button><Existinguser/></Button>
-
+                <Newuser />
+                <Existinguser />
               </Flex>
             </Box>
           </Box>
 
-          <Footer />
+          {/* <Footer /> */}
         </Box>
       </Box>
     </Box>

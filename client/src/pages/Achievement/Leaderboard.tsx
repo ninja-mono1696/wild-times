@@ -11,11 +11,33 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LeaderboardCard from "./LeaderboardCard";
 import bgVideo from "./bg_video.mp4";
+import axios from "axios";
+
+type userData = {
+  _id: string;
+  name: string;
+  score: number;
+  level: number;
+};
 
 const Achievement = () => {
+  const [data, setData] = useState([]);
+
+  const getData = () => {
+    try {
+      axios.get(`https://shy-blue-elk-hem.cyclic.app/users/`).then((res) => {
+        setData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <Box textAlign={"center"}>
       <Box height={"100vh"} width={"100%"}>
@@ -69,7 +91,9 @@ const Achievement = () => {
                 </Tr>
               </Thead>
               <Tbody textAlign={"center"}>
-                <LeaderboardCard _id={1} name={"sam"} score={2} level={2} />
+                {data.map((el, index) => (
+                  <LeaderboardCard key={el._id} {...el} index={index} />
+                ))}
               </Tbody>
             </Table>
           </TableContainer>
