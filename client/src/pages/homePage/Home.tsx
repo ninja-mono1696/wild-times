@@ -1,17 +1,16 @@
 import React from "react";
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Newuser from "../user/Newuser";
 import Existinguser from "../user/Existinguser";
-
+import squidPic from "../../assets/squidGame.jpg";
+import styles from "./Home.module.css";
 const Home = () => {
   return (
-    <Box w="100%" h="100vh">
+    <Box w="100%" h="100vh" className={styles.headStyle}>
       <Image
-        src={
-          "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxM[…]nx8Z3JhZGllbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-        }
+        src={squidPic}
         position="relative"
         width="100%"
         height="100%"
@@ -20,26 +19,41 @@ const Home = () => {
         alt="img"
       />
 
-      <Box w="100%" position="absolute" zIndex="100" top="0" textAlign="center">
-        <Box w="95%" paddingLeft={5} paddingRight={5} margin="auto">
-          {/* <Navbar /> */}
-
-          <Box padding={10} minHeight={500} textAlign="center">
-            <Box margin="auto" p={5}>
-              <Flex
-                flexDirection="row"
-                alignItems="center"
-                justifyContent="center"
-                gap={5}
-              >
-                <Newuser />
-                <Existinguser />
-              </Flex>
-            </Box>
-          </Box>
-
-          {/* <Footer /> */}
-        </Box>
+      <Box
+        position={"absolute"}
+        top={"5%"}
+        width={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Text color={"pink.700"} fontSize={"6xl"}>
+          ...WILD TIMES...
+        </Text>
+      </Box>
+      <Box
+        position="absolute"
+        zIndex="100"
+        top="25%"
+        width={"100%"}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        <Flex
+          width={"30%"}
+          height={"100px"}
+          bg={"#ff004c85"}
+          borderRadius={"10px"}
+          boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+          gap={5}
+        >
+          <Newuser />
+          <Existinguser />
+        </Flex>
       </Box>
     </Box>
   );

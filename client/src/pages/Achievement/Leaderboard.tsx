@@ -10,11 +10,13 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Button,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import LeaderboardCard from "./LeaderboardCard";
 import bgVideo from "./bg_video.mp4";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 type userData = {
   _id: string;
@@ -25,7 +27,7 @@ type userData = {
 
 const Achievement = () => {
   const [data, setData] = useState([]);
-
+  const navigate = useNavigate();
   const getData = () => {
     try {
       axios.get(`https://shy-blue-elk-hem.cyclic.app/users/`).then((res) => {
@@ -51,6 +53,7 @@ const Achievement = () => {
         >
           <Heading>LEADERBOARD</Heading>
         </Box>
+
         <video
           src={bgVideo}
           muted
@@ -97,6 +100,16 @@ const Achievement = () => {
               </Tbody>
             </Table>
           </TableContainer>
+          <Button
+            onClick={() => {
+              navigate("/");
+            }}
+            colorScheme="yellow"
+            position={"absolute"}
+            bottom={-20}
+          >
+            HOME
+          </Button>
         </Box>
       </Box>
     </Box>
