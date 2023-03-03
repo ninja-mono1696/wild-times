@@ -28,7 +28,7 @@ const newUser = () => {
       name
     };
     try {
-      fetch(`https://http://localhost:8080/`, {
+      fetch(`https://localhost:8080/`, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {
