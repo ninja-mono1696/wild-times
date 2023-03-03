@@ -10,18 +10,18 @@ const Home = () => {
   return (
     <Box w="100%" h="100vh">
       <video
-          src={HomeVid}
-          muted
-          autoPlay
-          loop
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            objectFit: "cover",
-          }}
-        ></video>
+        src={HomeVid}
+        muted
+        autoPlay
+        loop
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+          objectFit: "cover",
+        }}
+      ></video>
 
       <Box w="100%" position="absolute" zIndex="100" top="0" textAlign="center">
         <Box w="95%" paddingLeft={5} paddingRight={5} margin="auto">
@@ -36,9 +36,13 @@ const Home = () => {
                 flexDirection="row"
                 alignItems="center"
                 justifyContent="center"
+
+                gap={5}
+              >
                 gap={5}>
                 <Button><Newuser/></Button>
                 <Button><Existinguser/></Button>
+
               </Flex>
             </Box>
           </Box>
