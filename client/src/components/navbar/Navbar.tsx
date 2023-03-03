@@ -1,9 +1,12 @@
-import React from 'react'
+import { Heading } from "@chakra-ui/react";
+import React from "react";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <>
+      <Heading color={"red"}>XYX GAME</Heading>
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;
