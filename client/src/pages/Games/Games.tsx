@@ -1,13 +1,14 @@
-import React, { useRef, useEffect, ImgHTMLAttributes } from "react";
+import React, { useRef, useEffect, ImgHTMLAttributes, useState } from "react";
 import { Avatar, Box, Button, Heading, Text } from "@chakra-ui/react";
 import bgVideo from "../../assets/bg_video.mp4";
 import styles from "./Games.module.css";
 import { useToast } from "@chakra-ui/react";
 import night from "../../assets/Night.mp4";
-import vdo from "../../assets/Day2Night.mp4";
+import dayToNight from "../../assets/Day2Night.mp4";
 import winter from "../../assets/winter.mp4";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Chatbot from "../../Components/Chatbot";
 
 // type BlobImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 //     image: ImgHTMLAttributes<HTMLImageElement>
@@ -44,8 +45,8 @@ const Games = () => {
   const ref = useRef<HTMLCanvasElement>(null);
   const toast = useToast();
   const navigate = useNavigate();
-  console.log(ref.current);
 
+  const themeData = sessionStorage.getItem("setTheme") || "";
   useEffect(() => {
     init(Bird);
   }, []);
@@ -83,15 +84,26 @@ const Games = () => {
   //https://i.ibb.co/n3ybx81/Snowman-Face.png ---snowman face
   //https://i.ibb.co/ZxrcfmY/Snowman.png ---snowman
   //https://i.ibb.co/QCdKNyY/al.png----bird
+  // https://i.ibb.co/rmyqqgY/Snowman.png--new Snow
+
   const Bird = new Image();
-  Bird.src = "https://i.ibb.co/ZxrcfmY/Snowman.png";
-  Bird.alt = "bird";
-  Bird.style.zIndex = "10";
+  if (themeData == "day2night") {
+    Bird.src = "https://i.ibb.co/QCdKNyY/al.png";
+    Bird.alt = "bird";
+    Bird.style.zIndex = "10";
+  } else {
+    Bird.src = "https://i.ibb.co/rmyqqgY/Snowman.png";
+    Bird.alt = "bird";
+    Bird.style.zIndex = "10";
+  }
 
   //https://i.ibb.co/bF1JRDB/fire.png ----fire
   //https://i.ibb.co/mTRxM21/images.png ---bomb
   const Bomb = new Image();
-  Bomb.src = "https://i.ibb.co/bF1JRDB/fire.png";
+  Bomb.src =
+    themeData == "day2night"
+      ? "https://i.ibb.co/mTRxM21/images.png"
+      : "https://i.ibb.co/bF1JRDB/fire.png";
   Bomb.alt = "Bomb";
   Bomb.style.zIndex = "20";
 
@@ -247,7 +259,7 @@ const Games = () => {
     <div className={styles.games}>
       <Box id="main" height={"100vh"} width={"100%"}>
         <video
-          src={winter}
+          src={themeData == "day2night" ? dayToNight : winter}
           muted
           autoPlay
           loop
@@ -298,6 +310,7 @@ const Games = () => {
           <canvas ref={ref} id="canvas"></canvas>
         </Box>
       </Box>
+      <Chatbot />
     </div>
   );
 };
