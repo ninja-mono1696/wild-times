@@ -144,7 +144,7 @@ const Games = () => {
                    
                     let obj:result={
                        score: enemy.length*0,
-                       result:"loss"
+                       result:"lost"
                     }
                    
                        //to clear the prev image
@@ -177,7 +177,7 @@ const Games = () => {
                    
                     let obj:result={
                        score: enemy.length*10,
-                       result:"win"
+                       result:"wins"
                     }
                     toast({
                         title: 'Yeayy ! You won..',
