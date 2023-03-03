@@ -1,23 +1,35 @@
 import React from "react";
-import { Box, Button, Flex } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, Text } from "@chakra-ui/react";
 import { VscDebugRestart } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 
+type ResultData = {
+  score: number;
+  result: string;
+};
+
+type userData = {
+  _id: string;
+  name: string;
+  score: number;
+  level: number;
+};
+
 const Result = () => {
   const navigate = useNavigate();
-  const result = JSON.parse(sessionStorage.getItem("result"));
-  const name = JSON.parse(sessionStorage.getItem("user"));
+  const result: ResultData = JSON.parse(sessionStorage.getItem("result") || "");
+  const name: userData = JSON.parse(sessionStorage.getItem("user") || "");
 
   return (
     <Box w="100%" h="100%">
       <Box
         w="50%"
-        h={300}
         p={10}
-        margin="200px auto"
+        margin="auto"
         textAlign="center"
-        backgroundColor="#ECF2FF"
+        backgroundColor="yellow.300"
         borderRadius={15}
+        mt={"10%"}
       >
         <Flex
           flexDirection="column"
@@ -25,10 +37,13 @@ const Result = () => {
           gap={3}
           marginBottom={10}
         >
-          <h1 style={{ fontSize: "32px" }}>
-            `${name.name} ${result.result}`
-          </h1>
-          <h3 style={{ fontSize: "26px" }}>Score: {result.score}</h3>
+          <Flex justifyContent={"center"} alignItems={"center"}>
+            <Avatar size={"xl"} name={name[0].name}></Avatar>
+            <Text fontSize={"5xl"} textTransform={"uppercase"}>
+              {name[0].name} {result.result}
+            </Text>
+          </Flex>
+          <Text fontSize={"5xl"}>Score: {result.score}</Text>
         </Flex>
         <Flex
           w="60%"
