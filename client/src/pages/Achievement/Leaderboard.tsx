@@ -12,7 +12,7 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import React from "react";
-import AchievementCard from "./AchievementCard";
+import LeaderboardCard from "./LeaderboardCard";
 import bgVideo from "./bg_video.mp4";
 
 const Achievement = () => {
@@ -27,7 +27,7 @@ const Achievement = () => {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Heading>Achievement</Heading>
+          <Heading>LEADERBOARD</Heading>
         </Box>
         <video
           src={bgVideo}
@@ -54,22 +54,22 @@ const Achievement = () => {
         >
           {/* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */}
           <TableContainer
-            bg={"white"}
+            bg={"#00b7ff96"}
             borderRadius={"10px"}
             boxShadow="rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;"
             width={{ base: "95%", md: "70%", lg: "50%" }}
           >
-            <Table variant="simple" textAlign={"center"}>
+            <Table fontWeight={"bold"} variant="simple" textAlign={"center"}>
               <Thead>
                 <Tr>
-                  <Th>S.NO.</Th>
-                  <Th>NAME</Th>
-                  <Th>SCORE</Th>
-                  <Th>LEVEL</Th>
+                  <Th fontSize={"18px"}>S.NO.</Th>
+                  <Th fontSize={"18px"}>NAME</Th>
+                  <Th fontSize={"18px"}>SCORE</Th>
+                  <Th fontSize={"18px"}>LEVEL</Th>
                 </Tr>
               </Thead>
-              <Tbody>
-                <AchievementCard _id={1} name={"sam"} score={2} level={2} />
+              <Tbody textAlign={"center"}>
+                <LeaderboardCard _id={1} name={"sam"} score={2} level={2} />
               </Tbody>
             </Table>
           </TableContainer>

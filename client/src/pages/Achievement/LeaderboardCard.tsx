@@ -8,15 +8,16 @@ type Props = {
   level: number;
 };
 
-const AchievementCard = ({ _id, name, score, level }: Props) => {
+const LeaderboardCard = ({ _id, name, score, level }: Props) => {
+  console.log();
   return (
     <Tr>
       <Td>{_id}</Td>
-      <Td>{name}</Td>
+      <Td>{name.toUpperCase()}</Td>
       <Td>{score}</Td>
       <Td>{level}</Td>
     </Tr>
   );
 };
 
-export default AchievementCard;
+export default LeaderboardCard;
