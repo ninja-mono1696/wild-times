@@ -85,10 +85,11 @@ const Games = () => {
   //https://i.ibb.co/ZxrcfmY/Snowman.png ---snowman
   //https://i.ibb.co/QCdKNyY/al.png----bird
   // https://i.ibb.co/rmyqqgY/Snowman.png--new Snow
+  // https://i.ibb.co/df3N04q/tarzen.png -- tarzen
 
   const Bird = new Image();
   if (themeData == "day2night") {
-    Bird.src = "https://i.ibb.co/QCdKNyY/al.png";
+    Bird.src = "https://i.ibb.co/df3N04q/tarzen.png";
     Bird.alt = "bird";
     Bird.style.zIndex = "10";
   } else {
@@ -129,8 +130,8 @@ const Games = () => {
       let player = {
         x: 30,
         y: height / 2.5,
-        w: 110,
-        h: 110,
+        w: 90,
+        h: 90,
         speed: 35,
         moving: "false",
       };

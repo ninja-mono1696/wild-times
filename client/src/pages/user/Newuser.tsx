@@ -16,9 +16,17 @@ import {
   useDisclosure,
   Image,
   Box,
+  chakra,
+  shouldForwardProp,
 } from "@chakra-ui/react";
 import Day2nightTheme from "../../assets/day2night.png";
 import winterTheme from "../../assets/winterTheme.png";
+import { motion, isValidMotionProp } from "framer-motion";
+
+const ChakraBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 const newUser = () => {
   const toast = useToast();
@@ -76,8 +84,8 @@ const newUser = () => {
     <>
       <Button onClick={onOpen}>New User</Button>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
+        <ModalOverlay backdropFilter="blur(20px)" />
+        <ModalContent bg={"#ff057a52"} color={"white"}>
           <ModalHeader>
             <ModalCloseButton />
           </ModalHeader>
@@ -88,6 +96,7 @@ const newUser = () => {
                 placeholder="Enter user name"
                 type="name"
                 value={name}
+                _placeholder={{ color: "white" }}
                 onChange={(e) => setName(e.target.value)}
               />
               <FormLabel mt={5}>Select Theme</FormLabel>
@@ -97,38 +106,58 @@ const newUser = () => {
                 width={"100%"}
                 m={"auto"}
               >
-                <Box
-                  cursor={"pointer"}
-                  width={"45%"}
-                  border={select ? "3px solid red" : "none"}
-                  onClick={() => {
-                    setSelect(true);
-                    setTheme("day2night");
+                <ChakraBox
+                  initial={{ opacity: 0 }}
+                  whileInView={{ y: [-100, 20], opacity: 1, scale: 2, x: 100 }}
+                  transition={{
+                    duration: "1.2",
+                    delay: "0.5",
                   }}
                 >
-                  <Image src={Day2nightTheme}></Image>
-                </Box>
-                <Box
-                  cursor={"pointer"}
-                  width={"45%"}
-                  border={select ? "none" : "3px solid red"}
-                  onClick={() => {
-                    setSelect(false);
-                    setTheme("winter");
+                  <Box
+                    cursor={"pointer"}
+                    width={"45%"}
+                    borderRadius={5}
+                    border={select ? "3px solid white" : "none"}
+                    onClick={() => {
+                      setSelect(true);
+                      setTheme("day2night");
+                    }}
+                  >
+                    <Image src={Day2nightTheme}></Image>
+                  </Box>
+                </ChakraBox>
+                <ChakraBox
+                  initial={{ opacity: 0 }}
+                  whileInView={{ y: [100, 20], opacity: 1, scale: 2, x: 100 }}
+                  transition={{
+                    duration: "1.2",
+                    delay: "0.5",
                   }}
                 >
-                  <Image src={winterTheme}></Image>
-                </Box>
+                  <Box
+                    cursor={"pointer"}
+                    width={"45%"}
+                    borderRadius={5}
+                    border={select ? "none" : "3px solid white"}
+                    onClick={() => {
+                      setSelect(false);
+                      setTheme("winter");
+                    }}
+                  >
+                    <Image src={winterTheme}></Image>
+                  </Box>
+                </ChakraBox>
               </Box>
             </FormControl>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter mt={10}>
             <Button
               type="submit"
-              bg={"blue.500"}
+              bg={"yellow.500"}
               color={"white"}
               _hover={{
-                bg: "blue.600",
+                bg: "pink.600",
               }}
               onClick={userFunc}
             >

@@ -1,12 +1,26 @@
 import React from "react";
-import { Box, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  chakra,
+  shouldForwardProp,
+} from "@chakra-ui/react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import Newuser from "../user/Newuser";
 import Existinguser from "../user/Existinguser";
 import squidPic from "../../assets/squidGame.jpg";
 import styles from "./Home.module.css";
+import { motion, isValidMotionProp } from "framer-motion";
 
+const ChakraBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 const Home = () => {
   return (
@@ -21,7 +35,6 @@ const Home = () => {
         alt="img"
       />
 
-     
       <Box
         position={"absolute"}
         top={"5%"}
@@ -30,13 +43,11 @@ const Home = () => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        
         <Text color={"pink.700"} fontSize={"6xl"}>
           ...WILD TIMES...
         </Text>
-      
       </Box>
-      
+
       <Box
         position="absolute"
         zIndex="100"
@@ -57,8 +68,26 @@ const Home = () => {
           justifyContent="center"
           gap={5}
         >
-          <Newuser />
-          <Existinguser />
+          <ChakraBox
+            initial={{ opacity: 0 }}
+            whileInView={{ x: [-100, 0], opacity: 1 }}
+            transition={{
+              duration: "1.2",
+              delay: "0.5",
+            }}
+          >
+            <Newuser />
+          </ChakraBox>
+          <ChakraBox
+            initial={{ opacity: 0 }}
+            whileInView={{ x: [100, 0], opacity: 1 }}
+            transition={{
+              duration: "1.2",
+              delay: "0.5",
+            }}
+          >
+            <Existinguser />
+          </ChakraBox>
         </Flex>
       </Box>
     </Box>
