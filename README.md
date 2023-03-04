@@ -113,7 +113,6 @@ graph TD;
     resultPage-->leaderboardPage
     leaderboardPage-->homePage
 
-
 ```
 
 ## Creators Profile Links✨
