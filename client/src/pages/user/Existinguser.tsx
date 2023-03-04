@@ -22,7 +22,7 @@ import {
 import Day2nightTheme from "../../assets/day2night.png";
 import winterTheme from "../../assets/winterTheme.png";
 import { motion, isValidMotionProp } from "framer-motion";
-import squid from "../../assets/Squid.png";
+
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
     isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -35,12 +35,14 @@ const existingUser = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [select, setSelect] = useState(true);
   const [theme, setTheme] = useState("day2night");
+  const [loading,setLoading] = useState<boolean>(false)
   console.log(theme);
   const userFunc = () => {
     const payload = {
       name,
     };
     try {
+      setLoading(true)
       fetch(`https://shy-blue-elk-hem.cyclic.app/users/login`, {
         method: "POST",
         body: JSON.stringify(payload),
@@ -50,6 +52,7 @@ const existingUser = () => {
       })
         .then((res) => res.json())
         .then((res) => {
+          setLoading(false)
           if (res.msg == "Player Not Found, Please register") {
             toast({
               status: "warning",
@@ -148,7 +151,10 @@ const existingUser = () => {
             </FormControl>
           </ModalBody>
           <ModalFooter mt={10}>
+          
             <Button
+             isLoading={loading}
+             loadingText="Loading"
               type="submit"
               bg={"yellow.500"}
               color={"white"}

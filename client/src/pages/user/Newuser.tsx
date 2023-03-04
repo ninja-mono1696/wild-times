@@ -35,12 +35,14 @@ const newUser = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [select, setSelect] = useState(true);
   const [theme, setTheme] = useState("day2night");
+  const[loading,setLoading] = useState<boolean>(false)
 
   const userFunc = () => {
     const payload = {
       name,
     };
     try {
+      setLoading(true)
       fetch(`https://shy-blue-elk-hem.cyclic.app/users/register`, {
         method: "POST",
         body: JSON.stringify(payload),
@@ -50,6 +52,7 @@ const newUser = () => {
       })
         .then((res) => res.json())
         .then((res) => {
+          setLoading(false)
           if (res.msg == "The Player already exists") {
             toast({
               status: "warning",
@@ -152,7 +155,9 @@ const newUser = () => {
             </FormControl>
           </ModalBody>
           <ModalFooter mt={10}>
-            <Button
+          <Button
+             isLoading={loading}
+             loadingText="Loading"
               type="submit"
               bg={"yellow.500"}
               color={"white"}
@@ -163,6 +168,7 @@ const newUser = () => {
             >
               Submit
             </Button>
+            
           </ModalFooter>
         </ModalContent>
       </Modal>

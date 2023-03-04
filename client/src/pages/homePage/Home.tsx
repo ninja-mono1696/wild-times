@@ -9,13 +9,13 @@ import {
   chakra,
   shouldForwardProp,
 } from "@chakra-ui/react";
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
+
 import Newuser from "../user/Newuser";
 import Existinguser from "../user/Existinguser";
 import squidPic from "../../assets/squidGame.jpg";
 import styles from "./Home.module.css";
 import { motion, isValidMotionProp } from "framer-motion";
+import Guidelines from "../../components/Guidelines";
 
 const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
@@ -25,6 +25,7 @@ const ChakraBox = chakra(motion.div, {
 const Home = () => {
   return (
     <Box w="100%" h="100vh" className={styles.headStyle}>
+      <Guidelines />
       <Image
         src={squidPic}
         position="relative"
