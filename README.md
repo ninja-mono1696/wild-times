@@ -72,7 +72,7 @@ npm run dev
   - Squid Pro : The player will get a real time experience of the squid game with player dodging the bomb obstacles and reaching the goal to earn points.
   - Snow man : The player will get a real time experience of a snow blizzard with snow-man dodging the fire obstacles and reaching the goal to earn points.
 - HOW TO PLAY :
-  - On pressing the forward arrow button the player will move forward and on pressing the back arrow button the player will move backward.
+  - On pressing of the mouse button the player will move forward and on releasing the mouse button the player will stop.
   - The speed of the obstacles keeps on increasing as the player move forward.
   - The player has to save himself/herself from the obstacles to reach the goal.
   - If the player gets touched with any obstacles, the game is over.
@@ -85,7 +85,9 @@ npm run dev
 
 - The ranking of all the players registered with us will be shown here with their all time scores and level they have crossed.
 
-## Reference :
+
+## Reference :-
+
 
 - [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images)
-- 
+-
