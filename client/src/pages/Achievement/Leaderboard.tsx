@@ -28,18 +28,21 @@ type userData = {
 const Achievement = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const [page, setPage] = useState(1);
   const getData = () => {
     try {
-      axios.get(`https://shy-blue-elk-hem.cyclic.app/users/`).then((res) => {
-        setData(res.data);
-      });
+      axios
+        .get(`https://shy-blue-elk-hem.cyclic.app/users?page=${page}`)
+        .then((res) => {
+          setData(res.data);
+        });
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [page]);
   return (
     <Box textAlign={"center"}>
       <Box height={"100vh"} width={"100%"}>
@@ -95,21 +98,46 @@ const Achievement = () => {
               </Thead>
               <Tbody textAlign={"center"}>
                 {data.map((el, index) => (
-                  <LeaderboardCard  {...el as userData}  index={index} />
+                  <LeaderboardCard {...(el as userData)} index={index} />
                 ))}
               </Tbody>
             </Table>
           </TableContainer>
-          <Button
-            onClick={() => {
-              navigate("/");
-            }}
-            colorScheme="yellow"
+          <Box
             position={"absolute"}
             bottom={-20}
+            display={"flex"}
+            justifyContent={"space-around"}
+            width={"25%"}
           >
-            HOME
-          </Button>
+            <Box>
+              <Button
+                isDisabled={page == 1}
+                onClick={() => {
+                  setPage(page - 1);
+                }}
+              >
+                Prev
+              </Button>
+              <Button colorScheme="red">{page}</Button>
+              <Button
+                onClick={() => {
+                  setPage(page + 1);
+                }}
+              >
+                Next
+              </Button>
+            </Box>
+
+            <Button
+              onClick={() => {
+                navigate("/");
+              }}
+              colorScheme="red"
+            >
+              HOME
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>
