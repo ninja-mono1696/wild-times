@@ -163,11 +163,7 @@ graph TD;
 # LEADERBOARD
   - The ranking of all the players registered with us will be shown here with their all time scores and level they have crossed.
 
-![SinglePage](https://user-images.githubusercontent.com/112841168/222079907-46142af7-7413-470c-9449-d140256ffcd3.png)
-
-# Payment
-
-![payment](https://user-images.githubusercontent.com/112841168/222081109-35c28696-b1a0-408a-84bb-0d823c3ee42c.png)
+![Leaderboard](https://user-images.githubusercontent.com/105916979/222904170-2a7e0cb1-a64d-4d47-a962-ea0629596921.png)
 
 ---
 
