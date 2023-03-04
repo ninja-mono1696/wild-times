@@ -3,8 +3,9 @@ const {UserModel} = require("../models/user.model")
 const UserRouter = express.Router()
 
 UserRouter.get("/",async(req,res)=>{
+    const {page} = req.query
     try {
-        const data = await UserModel.find().sort({score:-1})
+        const data = await UserModel.find().sort({score:-1}).limit(7).skip((page-1)*7)
        res.send(data)
         
     } catch (error) {
