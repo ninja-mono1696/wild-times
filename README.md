@@ -149,7 +149,9 @@ graph TD;
    - The player has to save himself/herself from the obstacles to reach the goal.
    - If the player gets touched with any obstacles, the game is over.
 
-![loginShoeland](https://user-images.githubusercontent.com/112841168/222078830-5c542e7f-7839-45d7-912d-2a275972af94.png)
+![Day2Night](https://user-images.githubusercontent.com/105916979/222904173-5f39083f-4424-40d1-a254-5fc6287fd3ad.png)
+
+![Winter](https://user-images.githubusercontent.com/105916979/222904176-bfeb69fa-2819-4aee-b728-0755827e2b02.png)
 
 # RESULT-PAGE
   - After the game ends the scores will be shown on this page.
