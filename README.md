@@ -2,15 +2,17 @@
 
 ## Project name : WILD TIMES
 
-## Objective :- Wild Times is a real time full stack single player game. This game is build with the help of MERN Stack, also incorporating dynamic animation to create an immersive gaming experience.
+## Objective :
 
-## Description :-
+- Wild Times is a real time full stack single player game. This game is build with the help of MERN Stack, also incorporating dynamic animation to create an immersive gaming experience.
+
+## Description :
 
 - The game features players to earn points and also increase their ranks in the leaderboard, and earn rewards as they progress through the levels. Wild Times even features real time chat, leaderboard and achievements to enhance their social aspects.
 
 - The repo includes both client-side and server-side.
 
-## Tech Stacks :-
+## Tech Stacks :
 
 - HTML (canvas)
 - CSS
@@ -24,7 +26,7 @@
 - CSS-Animations
 - react-simple-chatbot (npm package)
 
-## RUN the Game :-
+## RUN the Game :
 
 1. Clone this repository.
 2. Open the terminal and navigate to the folder.
@@ -42,14 +44,14 @@ npm run dev
 
 5. Enjoy!
 
-## Team members :-
+## Creators :
 
 1. [Sarfraj Ahmad Raza](https://github.com/sarfraj0304)
 2. [Monojit Mondal](https://github.com/ninja-mono1696)
 3. [Swati Sucharita Mohanty](https://github.com/swati082001)
 4. [Ujjawal Kumar](https://github.com/Ujjawal0203)
 
-## Responsibilities :-
+## Responsibilities :
 
 1. HOME-PAGE : Sarfraj
 2. GAME-PAGE : Swati & Monojit
@@ -58,7 +60,7 @@ npm run dev
 5. CHATBOT : Ujjawal
 6. BACKEND : Swati
 
-## Pages :-
+## Pages :
 
 1. HOME-PAGE
 
@@ -83,6 +85,7 @@ npm run dev
 
 - The ranking of all the players registered with us will be shown here with their all time scores and level they have crossed.
 
-## Reference :- 
+## Reference :
+
 - [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images)
 - 
