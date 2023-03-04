@@ -95,7 +95,7 @@ const Achievement = () => {
               </Thead>
               <Tbody textAlign={"center"}>
                 {data.map((el, index) => (
-                  <LeaderboardCard key={el._id} {...el} index={index} />
+                  <LeaderboardCard  {...el as userData}  index={index} />
                 ))}
               </Tbody>
             </Table>

@@ -1,23 +1,12 @@
 import ChatBot from "react-simple-chatbot";
 
 import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
 
-type userData = {
-  _id: string;
-  name: string;
-  score: number;
-  level: number;
-};
 
-const SessionData: Array<userData> = JSON.parse(
-  sessionStorage.getItem("user") || ""
-);
-const PlayerName = SessionData[0].name;
 const steps = [
   {
     id: 1,
-    message: `"${PlayerName.toUpperCase()}" You Are Going to Defeated by Me!`,
+    message: `"Heyy" I am going to DEFEAT YOU!`,
     trigger: 2,
   },
   {
@@ -64,12 +53,12 @@ const steps = [
 
 const config = {
   botAvatar: "https://i.ibb.co/mTRxM21/images.png",
-  floating: true,
+  floating: true
 };
 
 const Chatbot = () => {
   return (
-    <Flex width="100%">
+    <Flex width="100%" color={"black"}>
       <ChatBot steps={steps} {...config} />
     </Flex>
   );

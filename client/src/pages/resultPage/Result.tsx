@@ -18,7 +18,7 @@ type userData = {
 const Result = () => {
   const navigate = useNavigate();
   const result: ResultData = JSON.parse(sessionStorage.getItem("result") || "");
-  const name: userData = JSON.parse(sessionStorage.getItem("user") || "");
+  const name: Array<userData> = JSON.parse(sessionStorage.getItem("user") || "");
 
   return (
     <Box w="100%" h="100%">

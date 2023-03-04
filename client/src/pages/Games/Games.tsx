@@ -8,7 +8,7 @@ import dayToNight from "../../assets/Day2Night.mp4";
 import winter from "../../assets/winter.mp4";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Chatbot from "../../Components/Chatbot";
+import Chatbot from "../../components/Chatbot";
 
 // type BlobImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 //     image: ImgHTMLAttributes<HTMLImageElement>

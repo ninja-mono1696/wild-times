@@ -9,7 +9,7 @@ type Props = {
   index: number;
 };
 
-const LeaderboardCard = ({ index, name, score, level }: Props) => {
+const LeaderboardCard = ({_id, index, name, score, level }: Props) => {
   console.log();
   return (
     <Tr>
