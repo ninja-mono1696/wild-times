@@ -1,4 +1,7 @@
 > 💻 PROJECT CODE⭐ ====>>>> ✨cheerful-notebook-6741💫
+
+---
+
 > 💻 PROJECT NAME⭐ ====>>>> ✨WILD TIMES💫
 > <br>
 
@@ -144,10 +147,10 @@ graph TD;
     - Snow man : The player will get a real time experience of a snow blizzard with snow-man dodging the fire obstacles and reaching the goal to earn points.
 
   - HOW TO PLAY :
-   - On pressing of the mouse button the player will move forward and on releasing the mouse button the player will stop.
-   - The speed of the obstacles keeps on increasing as the player move forward.
-   - The player has to save himself/herself from the obstacles to reach the goal.
-   - If the player gets touched with any obstacles, the game is over.
+    - On pressing of the mouse button the player will move forward and on releasing the mouse button the player will stop.
+    - The speed of the obstacles keeps on increasing as the player move forward.
+    - The player has to save himself/herself from the obstacles to reach the goal.
+    - If the player gets touched with any obstacles, the game is over.
 
 ![Day2Night](https://user-images.githubusercontent.com/105916979/222904173-5f39083f-4424-40d1-a254-5fc6287fd3ad.png)
 
@@ -167,7 +170,7 @@ graph TD;
 
 ---
 
-## Reference
+## Reference✨
 
 - [MDN DOCS](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images)
 - [Framer Motion](https://www.framer.com/motion/)
