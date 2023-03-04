@@ -104,13 +104,15 @@
 ```mermaid
 graph TD;
     App-->homePage
-    homePage-->signUpPage;
+    homePage-->registerPage;
     homePage-->loginPage;
-    signUpPage-->gamePage;
+    registerPage-->gamePage;
     loginPage-->gamePage;
     gamePage-->resultPage
+    resultPage-->gamePage
     resultPage-->leaderboardPage
-    resultPage-->homePage
+    leaderboardPage-->homePage
+
 
 ```
 
