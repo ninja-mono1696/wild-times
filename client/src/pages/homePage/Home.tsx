@@ -6,6 +6,8 @@ import Newuser from "../user/Newuser";
 import Existinguser from "../user/Existinguser";
 import squidPic from "../../assets/squidGame.jpg";
 import styles from "./Home.module.css";
+
+
 const Home = () => {
   return (
     <Box w="100%" h="100vh" className={styles.headStyle}>
@@ -19,6 +21,7 @@ const Home = () => {
         alt="img"
       />
 
+     
       <Box
         position={"absolute"}
         top={"5%"}
@@ -27,10 +30,13 @@ const Home = () => {
         justifyContent={"center"}
         alignItems={"center"}
       >
+        
         <Text color={"pink.700"} fontSize={"6xl"}>
           ...WILD TIMES...
         </Text>
+      
       </Box>
+      
       <Box
         position="absolute"
         zIndex="100"
