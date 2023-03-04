@@ -153,10 +153,12 @@ graph TD;
 
 ![Winter](https://user-images.githubusercontent.com/105916979/222904176-bfeb69fa-2819-4aee-b728-0755827e2b02.png)
 
+![Chatbot](https://user-images.githubusercontent.com/105916979/222904174-4ffc69c6-5f6a-43b3-ab98-9c355358a870.png)
+
 # RESULT-PAGE
   - After the game ends the scores will be shown on this page.
 
-![kidSHoeland](https://user-images.githubusercontent.com/112841168/222079404-d1e9298c-9438-4a1d-a430-5269da99b6e6.png)
+![Result](https://user-images.githubusercontent.com/105916979/222904169-a0d168b7-be4d-4285-8fa0-0b4cb237add9.png)
 
 # LEADERBOARD
   - The ranking of all the players registered with us will be shown here with their all time scores and level they have crossed.
